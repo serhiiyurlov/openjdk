@@ -67,3 +67,8 @@ RUN set -ex; \
 # improved, please open an issue or a pull request so we can discuss it!
 #
 #   https://github.com/docker-library/openjdk/issues
+
+RUN groupadd -g 999 javatester && \
+    useradd -m -r -u 999 -g javatester javatester
+USER javatester
+
